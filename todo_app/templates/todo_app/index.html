@@ -3,17 +3,20 @@
 {% block content %}
 <!--index.html-->
 {% if object_list %}
-<h3>All my lists</h3>
+<div class="container-fluid my-5 mx-2">
+<h3 class="display-4">All my lists:</h3>
+</div>
 {% endif %}
-<ul>
+<div class="container-fluid my-5 mx-5">
+<ul class="list-group">
     {% comment %} ListView automatically provides the context variable object_list to the template, 
     and object_list contains the list of to-do lists. {% endcomment %}
     {% for todolist in object_list %}
-    <li>
+    <li class="list-item list-group-item-action">
         <div
             role="button"
             onclick="location.href='{% url "list" todolist.id %}'">
-            {{ todolist.title }}
+           <h5 class="display-6"> {{ todolist.title }}</h5>
         </div>
     </li>
     {% comment %} if the object_list is empty {% endcomment %}
@@ -21,10 +24,12 @@
     <h4>You have no lists!</h4>
     {% endfor %}
 </ul>
+</div>
+<div class="container-fluid my-5 mx-5">
 <p>
-    <input
+    <input class="btn btn-warning btn-lg"
         value="Add a new list"
-        type="button"
         onclick="location.href='{% url "list-add" %}'"/>
 </p>
+</div>
 {% endblock %}

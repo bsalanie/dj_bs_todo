@@ -1,21 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container-fluid">
+<h3 class="display-4">Delete To-do Item</h3>
+<div class="container-fluid my-5">
+<h5 class="display-5 text-bg-warning">
+Are you sure you want to delete the item: <b>{{ object.title }}</b>
+   from the list <i>{{ todo_list.title }}</i>?</h5>
+</div>
 
-<h3>Delete To-do Item</h3>
-
-<p>Are you sure you want to delete the item: <b>{{ object.title }}</b>
-   from the list <i>{{ todo_list.title }}</i>?</p>
-
+<div class="container-fluid my-2">
 <form method="POST">
     {% csrf_token %}
     <input
         value="Yes, delete."
         type="submit">
-    <input
+    <input class="btn btn-danger"
         value="Cancel"
-        type="button"
         onclick="location.href='{% url "list" todo_list.id %}';">
 </form>
+</div>
+</div>
 
 {% endblock %}

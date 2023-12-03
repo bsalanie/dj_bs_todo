@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
+<div class="container-fluid my-5">
     <div>
-        <div>
-            <h3>Edit list:</h3>
-            <h5>{{ todo_list.title | upper }}</h5>
+        <div class="container-fluid my-5">
+            <h3 class="display-3">Edit list:</h3>
+            <h5 class="display-6 mx-3">{{ todo_list.title | upper }}</h5>
         </div>
-        <ul>
+        <div class="container-fluid">
+        <ul class="list-group">
             {% for todo in object_list %}
-            <li>
-                <div>
+            <li  class="list-item list-group-item-action">
+                <div class="container-fluid mx-5">
                     <div
                         role="button"
                         onclick="location.href=
@@ -24,18 +25,19 @@
             <p>There are no to-do items in this list.</p>
             {% endfor %}
         </ul>
+        </div>
         <p>
-            <input
+            <div class="container-fluid my-5">
+            <input class="btn btn-primary"
                 value="Add a new item"
-                type="button"
                 onclick="location.href=
                 '{% url "item-add" todo_list.id %}'" />
-            <input
+            <input class="btn btn-danger"
                 value="Delete this list"
-                type="button"
                 onclick="location.href=
                 '{% url "list-delete" todo_list.id %}'" />
         </p>
+    </div>
     </div>
 </div>
 {% endblock %}

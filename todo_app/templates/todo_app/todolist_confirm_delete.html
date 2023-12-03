@@ -2,10 +2,11 @@
 
 {% block content %}
 <!--todolist_confirm_delete.html-->
-
-<h3>Delete List</h3>
-
-<p>Are you sure you want to delete the list <i>{{ object.title }}</i>?</p>
+<div class="container-fluid">
+    <h3 class="display-4">Delete List</h3>
+    <div class="container-fluid my-5">
+    <h5 class="display-5 text-bg-warning">
+Are you sure you want to delete the list <i>{{ object.title }}</i>?</h5>
 
 <form method="POST">
     {% csrf_token %}
@@ -17,5 +18,5 @@
     value="Cancel"
     type="button"
     onclick="location.href='{% url "index" %}';">
-
+</div>
 {% endblock %}
