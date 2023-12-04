@@ -25,8 +25,7 @@
             <p>There are no to-do items in this list.</p>
             {% endfor %}
         </ul>
-        </div>
-        <p>
+        </div> 
             <div class="container-fluid my-5">
             <input class="btn btn-primary"
                 value="Add a new item"
@@ -36,7 +35,6 @@
                 value="Delete this list"
                 onclick="location.href=
                 '{% url "list-delete" todo_list.id %}'" />
-        </p>
     </div>
     </div>
 </div>

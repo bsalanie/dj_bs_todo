@@ -4,7 +4,7 @@
 <!--index.html-->
 {% if object_list %}
 <div class="container-fluid my-5 mx-2">
-<h3 class="display-4">All my lists:</h3>
+<h3 class="display-5">All my lists:</h3>
 </div>
 {% endif %}
 <div class="container-fluid my-5 mx-5">
@@ -16,7 +16,7 @@
         <div
             role="button"
             onclick="location.href='{% url "list" todolist.id %}'">
-           <h5 class="display-6"> {{ todolist.title }}</h5>
+           <h5> {{ todolist.title }}</h5>
         </div>
     </li>
     {% comment %} if the object_list is empty {% endcomment %}
